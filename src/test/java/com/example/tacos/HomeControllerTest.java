@@ -1,6 +1,6 @@
 package com.example.tacos;
 
-import com.example.tacos.controllers.HomeController;
+import com.example.tacos.configuration.WebConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -10,12 +10,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
-@WebMvcTest(HomeController.class)
+@WebMvcTest(WebConfig.class)
 public class HomeControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
+    @SuppressWarnings("null")
     @Test
     public void testHomePage() throws Exception{
         mockMvc.perform(get("/")).andExpect(status().isOk())
