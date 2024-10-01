@@ -34,7 +34,7 @@ public class DesignTacoController {
 //will construct a list of Ingredient objects to be put into the model.
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-        List<Ingredient> ingredients = ingredientRepository.findAll();
+        Iterable<Ingredient> ingredients = ingredientRepository.findAll();
 //        List<Ingredient> ingredients = Arrays.asList(
 //                new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
 //                new Ingredient("COTO", "Corn Tortilla", Type.WRAP),
